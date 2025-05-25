@@ -13,13 +13,13 @@ struct ExploreTab: View {
   @Environment(CurrentAccount.self) private var currentAccount
   @Environment(Client.self) private var client
   @State private var routerPath = RouterPath()
-
+  // This is the body section
   var body: some View {
     NavigationStack(path: $routerPath.path) {
       ExploreView()
         .withAppRouter()
         .withSheetDestinations(sheetDestinations: $routerPath.presentedSheet)
-        .toolbarBackground(theme.primaryBackgroundColor.opacity(0.30), for: .navigationBar)
+        .toolbarBackground(theme.primaryBackgroundColor.opacity(0.70), for: .navigationBar)
         .toolbar {
           ToolbarTab(routerPath: $routerPath)
         }
